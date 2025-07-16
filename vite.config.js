@@ -9,11 +9,11 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    root: 'src',
+    root: 'src/js',
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/*.html'),
+        input: glob.sync('./src/js/*.html'),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -39,7 +39,7 @@ export default defineConfig(({ command }) => {
     },
     plugins: [
       injectHTML(),
-      FullReload(['./src/**/**.html']),
+      FullReload(['./src/js/*.html']),
       SortCss({
         sort: 'mobile-first',
       }),
