@@ -15,13 +15,34 @@ const refs = {
 let selectedDate = null;
 let intervalId = null;
 
-refs.btn.disabled = true;
-
 const options = {
   enableTime: true,
   time_24hr: true,
+  dateFormat: 'Y-m-d H:i',
   defaultDate: new Date(),
   minuteIncrement: 1,
+  monthSelectorType: 'dropdown',
+  yearSelectorType: 'dropdown',
+  locale: {
+    firstDayOfWeek: 0,
+    weekdays: {
+      shorthand: ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'],
+      longhand: [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sunday',
+      ],
+    },
+  },
+  onOpen(selectedDates, dateStr, instance) {
+    setTimeout(() => {
+      instance.calendarContainer.style.top = '84px';
+    }, 0);
+  },
   onClose(selectedDates) {
     selectedDate = selectedDates[0];
     if (selectedDate <= new Date()) {
@@ -35,21 +56,22 @@ const options = {
     }
   },
 };
-
 flatpickr(refs.input, options);
 
 refs.btn.addEventListener('click', () => {
   refs.btn.disabled = true;
   refs.input.disabled = true;
 
-  intervalId = setInterval(() => {
-    const diff = selectedDate - new Date();
-    if (diff <= 0) {
-      clearInterval(intervalId);
-      updateTimer(0);
+  timerId = setInterval(() => {
+    const now = new Date();
+    const delta = selectedDate - now;
+
+    if (delta <= 0) {
+      clearInterval(timerId);
+
       return;
     }
-    updateTimer(diff);
+    updateTimer(delta);
   }, 1000);
 });
 
@@ -78,3 +100,9 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+
+import '../css/styles.css';
+
+console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
+console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
+console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
