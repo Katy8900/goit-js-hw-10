@@ -49,6 +49,10 @@ const options = {
       iziToast.warning({
         title: 'Error',
         message: 'Please choose a date in the future',
+        position: 'topRight',
+        timeout: 3000,
+        close: true,
+        class: 'custom-toast',
       });
       refs.btn.disabled = true;
     } else {

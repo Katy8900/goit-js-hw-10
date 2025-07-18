@@ -158,9 +158,6 @@ label {
   height: 16px;
 }
 
-.flatpickr-months .flatpickr-month {
-}
-
 .flatpickr-months {
   display: flex;
   justify-content: space-between;
@@ -198,4 +195,115 @@ label {
   color: #333;
   padding: 0;
   width: 39px;
+}
+
+span.flatpickr-weekday {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #2e2f42;
+}
+
+.flatpickr-day {
+  font-family: var(--font-family);
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #666;
+  display: flex;
+  line-height: 32px;
+}
+
+.flatpickr-day.selected {
+  background-color: #4e75ff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.flatpickr-day.today {
+  border-radius: 50%;
+  border-color: #4e75ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.flatpickr-calendar.hasTime .flatpickr-time {
+  height: 36px;
+  border-top: 1px solid #c1c1c1;
+}
+
+.flatpickr-time input.flatpickr-hour {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  padding: 16px 0px 0px 0px;
+}
+
+.flatpickr-time input.flatpickr-minute {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: #333;
+  padding: 16px 0px 0px 0px;
+}
+
+.flatpickr-time .flatpickr-time-separator {
+  padding: 16px 0px 0px 0px;
+}
+
+/* ERROR */
+
+.iziToast > .iziToast-icon {
+  font-size: 24px !important;
+}
+
+.iziToast > .iziToast-message {
+  margin-left: 8px;
+}
+
+.iziToast > .iziToast-close {
+  color: #fff !important;
+  font-size: 20px !important;
+}
+
+.iziToast.custom-toast {
+  width: 302px !important;
+  height: 64px !important;
+  padding: 20px !important;
+  border-radius: 4px !important;
+  background: #ef4040 !important;
+  border-bottom: 2px solid #ffbebe !important;
+  box-shadow: none !important;
+  color: #fff !important;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 0.03em;
+  line-height: 150%;
+}
+
+.iziToast-wrapper {
+  top: 36px !important;
+  right: 216px !important;
+  left: auto !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  width: auto !important;
+  padding: 0;
+}
+
+.iziToast {
+  margin: 0;
 }
