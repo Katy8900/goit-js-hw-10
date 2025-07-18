@@ -10,12 +10,12 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    root: '.',
+    root: 'src/js',
     build: {
       sourcemap: true,
       rollupOptions: {
         input: {
-          index: './src/js/index.html',
+          main: './src/js/index.html',
           timer: './src/js/1-timer.html',
           snackbar: './src/js/2-snackbar.html',
         },
@@ -39,7 +39,7 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: './dist',
+      outDir: '../dist/',
       emptyOutDir: true,
     },
     plugins: [
