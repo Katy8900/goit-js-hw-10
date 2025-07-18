@@ -14,7 +14,11 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/js/*.html'),
+        input: {
+          main: './src/js/index.html',
+          timer: './src/js/1-timer.html',
+          snackbar: './src/js/2-snackbar.html',
+        },
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
