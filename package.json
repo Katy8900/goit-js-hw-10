@@ -1,4 +1,5 @@
-{
+
+  {
   "name": "vanilla-app-template",
   "private": true,
   "version": "1.0.0",
@@ -6,11 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --base=/goit-js-hw-10/",
-    "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0",
     "glob": "^11.0.0",
     "postcss": "^8.4.41",
     "postcss-sort-media-queries": "^5.2.0",
@@ -19,8 +18,7 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "flatpickr": "^4.6.13",
-    "izitoast": "^1.4.0",
+    "simplelightbox": "^2.14.3",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }

@@ -14,11 +14,7 @@ export default defineConfig(({ command }) => {
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: {
-          main: './src/js/index.html',
-          timer: './src/js/1-timer.html',
-          snackbar: './src/js/2-snackbar.html',
-        },
+        input: glob.sync('./src/js/*.html'),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
@@ -39,12 +35,12 @@ export default defineConfig(({ command }) => {
           },
         },
       },
-      outDir: '../dist/',
+      outDir: '../dist',
       emptyOutDir: true,
     },
     plugins: [
       injectHTML(),
-      FullReload(['./src/js/*.html']),
+      FullReload(['./src/**/**.html']),
       SortCss({
         sort: 'mobile-first',
       }),
