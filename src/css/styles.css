@@ -43,6 +43,10 @@ input.flatpickr-input {
   border-radius: 4px;
 }
 
+input[type='number'] {
+  border: none !important;
+}
+
 input.flatpickr-input:hover {
   border-color: #000;
   color: #000;
@@ -209,10 +213,13 @@ span.flatpickr-weekday {
 .flatpickr-day {
   font-family: var(--font-family);
   letter-spacing: 0.04em;
-  text-align: center;
   color: #666;
   display: flex;
   line-height: 32px;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
 }
 
 .flatpickr-day.selected {

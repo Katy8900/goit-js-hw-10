@@ -10,11 +10,11 @@ export default defineConfig(({ command }) => {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
-    root: 'src/js',
+    root: 'src',
     build: {
       sourcemap: true,
       rollupOptions: {
-        input: glob.sync('./src/js/*.html'),
+        input: glob.sync('./src/*.html'),
         output: {
           manualChunks(id) {
             if (id.includes('node_modules')) {
