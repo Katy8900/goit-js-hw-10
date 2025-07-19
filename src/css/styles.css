@@ -43,8 +43,12 @@ input.flatpickr-input {
   border-radius: 4px;
 }
 
-input[type='number'] {
+.flatpickr-time input[type='number'] {
   border: none !important;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
 }
 
 input.flatpickr-input:hover {
