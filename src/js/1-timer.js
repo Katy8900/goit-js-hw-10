@@ -13,7 +13,7 @@ const refs = {
 };
 
 let selectedDate = null;
-let intervalId = null;
+let timerId = null;
 
 const options = {
   enableTime: true,
@@ -72,6 +72,8 @@ refs.btn.addEventListener('click', () => {
 
     if (delta <= 0) {
       clearInterval(timerId);
+      refs.input.disabled = false;
+      refs.btn.disabled = false;
 
       return;
     }
